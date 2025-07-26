@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Cedars Tech News</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Local styles -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="login.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body class="bg-white text-black relative">
+  <!-- Sidebar -->
+  <div id="sidebar" aria-label="Sidebar navigation" class="fixed top-0 left-0 w-64 h-full bg-white text-black transform -translate-x-full transition-transform duration-500 ease-in-out z-50 border-2 border-gray-300 p-4">
+    <button id="closeSidebar" aria-label="Close sidebar" class="mb-6">
+      <!-- Close Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+      </svg>
+    </button>
+    
+    <ul class="space-y-4">
+      <li class="flex justify-between items-center cursor-pointer hover:text-gray-600">
+        News <span>&gt;</span>
+      </li>
+      <li class="hover:text-gray-600 cursor-pointer">Announcements</li>
+      <li class="hover:text-gray-600 cursor-pointer">The Team</li>
+      <li class="hover:text-gray-600 cursor-pointer">About Us</li>
+    </ul>
+
+    <hr class="my-6 border-2 border-gray-300">
+
+    <div>
+      <p class="text-sm mb-2">Follow Us</p>
+      <div class="flex space-x-4">
+        <a href="https://x.com/Cedars_Upper" target="_blank" rel="noopener noreferrer">
+          <img src="images/image.png" class="w-5 h-5 object-contain rounded" alt="X">
+        </a>
+        <a href="https://www.instagram.com/cedarsupperschool/" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" class="w-5 h-5 object-contain rounded" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/CedarsUpperSchoolLB" target="_blank" rel="noopener noreferrer">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" class="w-5 h-5 object-contain rounded" alt="Facebook">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="flex items-center justify-between p-4 bg-white border-b-2 border-gray-300">
+    <div class="flex items-center">
+      <button id="openSidebar" aria-label="Open sidebar" class="text-black mr-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="black" stroke-width="3">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      
+      <!-- Logo with adjusted size and margin -->
+      <img src="images/logo.png" alt="Logo" class="w-10 h-10 object-contain mr-3" />
+      
+      <!-- Text with vertical alignment -->
+      <span class="text-[#93c23e] text-4xl font-bold leading-none">Cedars Tech News</span>
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <!-- Search Input and Icon -->
+      <div class="relative flex items-center space-x-2">
+        <input type="text" id="searchInput" placeholder="Search..."
+          class="transition-all duration-300 ease-in-out w-0 opacity-0 px-2 py-1 border border-gray-400 rounded focus:outline-none focus:ring focus:ring-[#93c23e]"
+        />
+        <button id="searchToggle" class="text-black" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.35-4.35M17 10a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Vertical Divider -->
+      <div class="h-6 w-px bg-gray-400"></div>
+
+      <!-- Sign In Button -->
+      <a href="login.html" class="flex items-center text-black border border-gray-500 p-2 rounded hover:bg-gray-100 transition">
+        <span class="mr-2">Sign In</span>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8l-4 4m0 0l4 4m-4-4h8" />
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="p-8 min-h-screen flex flex-col">
+    <h2 class="text-2xl font-bold mb-4">Latest News</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 flex-grow" style="grid-auto-rows: 1fr;">
+      <!-- News cards -->
+      <div class="bg-white border-2 border-gray-300 p-4 rounded-md row-span-2 h-full flex flex-col justify-between">
+        <img src="https://via.placeholder.com/300x400" alt="News Image" class="w-full h-96 object-cover rounded-md mb-4">
+        <div>
+          <h3 class="font-bold text-lg">News Title 1</h3>
+          <p class="text-gray-600">Brief description about the news content goes here.</p>
+        </div>
+      </div>
+      <!-- More cards -->
+      <div class="bg-white border-2 border-gray-300 p-4 rounded-md h-full flex flex-col justify-between">
+        <img src="https://via.placeholder.com/300x200" alt="News Image" class="w-full h-48 object-cover rounded-md mb-4">
+        <div>
+          <h3 class="font-bold text-lg">News Title 2</h3>
+          <p class="text-gray-600">Brief description about the news content goes here.</p>
+        </div>
+      </div>
+      <div class="bg-white border-2 border-gray-300 p-4 rounded-md h-full flex flex-col justify-between">
+        <img src="https://via.placeholder.com/300x200" alt="News Image" class="w-full h-48 object-cover rounded-md mb-4">
+        <div>
+          <h3 class="font-bold text-lg">News Title 3</h3>
+          <p class="text-gray-600">Brief description about the news content goes here.</p>
+        </div>
+      </div>
+      <div class="bg-white border-2 border-gray-300 p-4 rounded-md h-full flex flex-col justify-between">
+        <img src="https://via.placeholder.com/300x200" alt="News Image" class="w-full h-48 object-cover rounded-md mb-4">
+        <div>
+          <h3 class="font-bold text-lg">News Title 4</h3>
+          <p class="text-gray-600">Brief description about the news content goes here.</p>
+        </div>
+      </div>
+      <div class="bg-white border-2 border-gray-300 p-4 rounded-md h-full flex flex-col justify-between">
+        <img src="https://via.placeholder.com/300x200" alt="News Image" class="w-full h-48 object-cover rounded-md mb-4">
+       
+        <div class="news-card">
+          
+            <h3>News Title 5</h3>
+            <p>Brief description about the news content goes here.</p>
+
+            </div>
+          </div>
+        </div>
+
+  <!-- Scripts -->
+  <script>
+    // Sidebar Toggle
+    const openSidebar = document.getElementById('openSidebar');
+    const closeSidebar = document.getElementById('closeSidebar');
+    const sidebar = document.getElementById('sidebar');
+
+    openSidebar.addEventListener('click', () => {
+      sidebar.classList.remove('-translate-x-full');
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeSidebar.addEventListener('click', () => {
+      sidebar.classList.add('-translate-x-full');
+      document.body.style.overflow = '';
+    });
+
+    // Search Toggle
+    const searchToggle = document.getElementById('searchToggle');
+    const searchInput = document.getElementById('searchInput');
+
+    searchToggle.addEventListener('click', () => {
+      const isVisible = searchInput.classList.contains('w-40');
+      
+      if (isVisible) {
+        searchInput.classList.remove('w-40', 'opacity-100', 'ml-2');
+        searchInput.classList.add('w-0', 'opacity-0');
+        searchInput.blur();
+      } else {
+        searchInput.classList.remove('w-0', 'opacity-0');
+        searchInput.classList.add('w-40', 'opacity-100', 'ml-2');
+        searchInput.focus();
+      }
+    });
+
+    // Hide search input when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target) && !searchToggle.contains(e.target)) {
+        searchInput.classList.remove('w-40', 'opacity-100', 'ml-2');
+        searchInput.classList.add('w-0', 'opacity-0');
+      }
+    });
+  </script>
+</body>
+</html>
